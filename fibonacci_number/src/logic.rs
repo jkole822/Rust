@@ -1,7 +1,6 @@
-
 pub fn fibonacci(number: u32) -> u32 {
     if number == 0 || number == 1 {
-        return 0
+        return 0;
     }
 
     let mut previous = 0;
