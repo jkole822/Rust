@@ -1,0 +1,38 @@
+name: Rust CI for Project A
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'fibonacci_number/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'fibonacci_number/**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Format check
+        run: cargo fmt -- --check
+        working-directory: fibonacci_number
+
+      - name: Build
+        run: cargo build --verbose
+        working-directory: fibonacci_number
+
+      - name: Test
+        run: cargo test --verbose
+        working-directory: fibonacci_number
+
