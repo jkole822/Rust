@@ -9,6 +9,7 @@ on:
     branches: [ main ]
     paths:
       - 'fibonacci_number/**'
+  workflow_dispatch:  # allows you to trigger manually via GitHub UI
 
 jobs:
   build-and-test:
@@ -35,4 +36,3 @@ jobs:
       - name: Test
         run: cargo test --verbose
         working-directory: fibonacci_number
-
