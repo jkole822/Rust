@@ -1,4 +1,4 @@
-pub mod logic;
+mod logic;
 
 use logic::fibonacci;
 use std::io;

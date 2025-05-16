@@ -39,4 +39,3 @@ fn test_fibonacci_five() {
 fn test_fibonacci_seven() {
     assert_eq!(fibonacci(7), 8);
 }
-
