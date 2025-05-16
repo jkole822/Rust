@@ -1,4 +1,4 @@
-name: Rust CI for Project A
+name: Rust CI for Fibonacci Number Exercise
 
 on:
   push:
