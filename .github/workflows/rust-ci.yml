@@ -29,6 +29,10 @@ jobs:
         run: cargo fmt -- --check
         working-directory: fibonacci_number
 
+      - name: Lint with Clippy
+        run: cargo clippy -- -D warnings
+        working-directory: fibonacci_number
+
       - name: Build
         run: cargo build --verbose
         working-directory: fibonacci_number
