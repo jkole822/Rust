@@ -10,8 +10,6 @@ pub fn fibonacci(number: u32) -> u32 {
         let temp = current;
         current += previous;
         previous = temp;
-
-        let unused = i;
     }
 
     current
