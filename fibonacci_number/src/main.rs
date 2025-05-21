@@ -4,8 +4,8 @@ use logic::fibonacci;
 use std::{env, io};
 
 fn main() {
-    let db_url = env::var("DATABASE_URL").expect("DATABASE_URL not set");
-    println!("Connected to DB at: {}", db_url);
+    let greeting = env::var("FIB_GREETING").unwrap_or("No greeting found".to_string());
+    println!("Greeting from secret: {}", greeting);
     println!("Provide a number to get the fibonacci number");
 
     let mut number = String::new();
