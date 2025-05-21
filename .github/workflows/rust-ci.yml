@@ -15,6 +15,7 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     env:
+      FIB_GREETING: ${{ secrets.FIB_GREETING }}
       POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
       POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
       POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
@@ -48,5 +49,5 @@ jobs:
         working-directory: fibonacci_number
 
       - name: Run Binary
-        run: echo "5" | ./target/release/fibonacci_number
+        run: echo "5" | ./target/debug/fibonacci_number
         working-directory: fibonacci_number
